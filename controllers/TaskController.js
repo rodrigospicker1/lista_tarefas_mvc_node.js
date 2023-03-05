@@ -30,7 +30,6 @@ module.exports = class TaskController{
         const id = req.params.id
         
         const task = await Task.findOne({where: {id: id}, raw: true})
-        console.log(task)
         
         res.render('tasks/edit', {task})
     }
@@ -40,6 +39,20 @@ module.exports = class TaskController{
         const task = {
             title: req.body.title,
             description: req.body.description,
+        }
+
+        await Task.update(task, {where: {id: id}})
+        
+        res.redirect('/tasks')
+    }
+
+    static async toggleTaskStatus(req, res){
+        const id = req.params.id
+
+        const taskSelect = await Task.findOne({where: {id: id}, raw: true})
+        
+        const task = {
+            done: taskSelect.done === 0 ? true : false
         }
 
         await Task.update(task, {where: {id: id}})

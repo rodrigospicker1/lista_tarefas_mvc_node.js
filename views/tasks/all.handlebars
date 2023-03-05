@@ -7,9 +7,13 @@
   <div class="card-body">
     <ul class="list-group list-group-flush" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
         {{#each tasks}}
+        {{#if this.done}}
+        <li class=" list-group-item list-group-item-secondary" style="text-decoration:line-through;justify-content: space-between;width: 40%;background-color: rgb(53, 56, 228);color:rgb(153, 153, 153);border-radius:5px;font-weight: 600;font-size: 25px;display: flex;">{{this.title}}
+        {{else}}
         <li class=" list-group-item list-group-item-secondary" style="justify-content: space-between;width: 40%;background-color: rgb(53, 56, 228);color:white;border-radius:5px;font-weight: 600;font-size: 25px;display: flex;">{{this.title}}
+        {{/if}}
             <div class="actions" style="display: flex;justify-content: end;">
-                <a href=""><i style="margin: 10px;color: rgb(43, 228, 102)" class="fa-solid fa-check"></i></a>
+                <a href="/tasks/updatestatus/{{this.id}}"><i style="margin: 10px;color: rgb(43, 228, 102)" class="fa-solid fa-check"></i></a>
                 <a href="/tasks/edit/{{this.id}}"><i style="margin: 10px;color: rgb(228, 197, 43)" class="fa-solid fa-pencil"></i></a>
                 <a href="/tasks/remove/{{this.id}}"><i style="margin: 10px;color: rgb(228, 43, 43)" class="fa-solid fa-xmark"></i></a>
             </div>
