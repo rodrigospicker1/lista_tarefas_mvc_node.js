@@ -1,0 +1,19 @@
+
+
+<div class="card text-center text-bg-dark" style="margin:20px">
+  <div class="card-header">
+    <div class="display-4" style="font-weight: 700">Editando {{task.title}}</div>
+  </div>
+  <div class="card-body">
+    <form action="/tasks/edit" method="POST">
+        <input type="hidden" name="id" value="{{task.id}}">
+        <div class="mb-3" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
+            <input style="width:40%" type="text" name="title" placeholder="Título" value="{{task.title}}" class="form-control">
+        </div>
+        <div class="mb-3" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
+            <textarea style="width:40%" name="description" placeholder="Descriçao" class="form-control" rows="3">{{task.description}}</textarea>
+        </div>
+        <button style="width:40%;margin-bottom: 20px;" type="submit" class="btn btn-primary">atualizar</button>
+    </form>
+  </div>
+</div>
