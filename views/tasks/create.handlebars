@@ -2,19 +2,17 @@
 
 <div class="card text-center text-bg-dark" style="margin:20px">
   <div class="card-header">
-    <div class="display-3">Adicionar tarefa</div>
+    <div class="display-4" style="font-weight: 700">Adicionar tarefa</div>
   </div>
   <div class="card-body">
     <form action="/tasks/add" method="POST">
         <div class="mb-3" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
-            <label style="width:10%" class="form-label">Título</label>
-            <input style="width:50%" type="text" class="form-control">
+            <input style="width:40%" type="text" name="title" placeholder="Título"  class="form-control">
         </div>
         <div class="mb-3" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
-            <label style="width:10%" class="form-label">Descrição</label>
-            <textarea style="width:50%" class="form-control" rows="3"></textarea>
+            <textarea style="width:40%" name="description" placeholder="Descriçao" class="form-control" rows="3"></textarea>
         </div>
-        <button style="width:60%" type="submit" class="btn btn-primary">Criar</button>
+        <button style="width:40%" type="submit" class="btn btn-primary">Criar</button>
     </form>
   </div>
   <div class="card-footer text-muted">

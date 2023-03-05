@@ -1,1 +1,17 @@
-<h1>Ver todas</h1>
+
+
+<div class="card text-center text-bg-dark" style="margin:20px">
+  <div class="card-header">
+    <div class="display-4" style="font-weight: 700">Tarefas</div>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush" style="display: flex;flex-wrap: nowrap;align-items: center;justify-content: center;">
+        {{#each tasks}}
+        <li class=" list-group-item list-group-item-secondary" style="width: 40%;background-color: rgb(53, 56, 228);color:white;border-radius:5px;font-weight: 600;font-size: 20px;display: flex;">{{this.title}}</li>
+        {{/each}}
+    </ul>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
